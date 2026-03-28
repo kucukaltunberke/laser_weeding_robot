@@ -1,0 +1,4 @@
+controller_joint_names: ['imu_joint', 'right_wheel_joint', 'left_wheel_joint', 'right_front-joint', 'left_front_joint', ]
+pid: [10.0, 2.0, 1.0, 10.0, 0.0, 1.0, 10.0, 0.0, 1.0, 20.0, 1.0, 0.1, 0.0, 1.0, 0.1]
+left_wheel_joint_pid: [Kp_left, Ki_left, Kd_left]
+right_wheel_joint_pid: [Kp_right, Ki_right, Kd_right]

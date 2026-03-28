@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="ryobi">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.97" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57075 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ryobi_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0.2"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_chassis">
+    <inertial>
+      <origin
+        xyz="0.181603473423253 0 0.205427256737739"
+        rpy="0 0 0" />
+      <mass
+        value="50.22" />
+      <inertia
+        ixx="1"
+        ixy="0"
+        ixz="0"
+        iyy="1"
+        iyz="0"
+        izz="1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ryobi_description/meshes/qubi_chassis.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.6 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.18 0 0.2"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.8 0.5 0.5"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chassis_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="base_chassis" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="5.04" />
+      <inertia
+        ixx="1"
+        ixy="0"
+        ixz="0"
+        iyy="1"
+        iyz="0"
+        izz="1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+         rpy="1.57075 0 0" />
+      <geometry>
+        <cylinder length="0.06" radius="0.175"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.4 0.3 0.4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57075 0 0" />
+      <geometry>
+        <cylinder length="0.06" radius="0.175"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.340935167690438 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_chassis" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="5.04" />
+      <inertia
+        ixx="1"
+        ixy="0"
+        ixz="0"
+        iyy="1"
+        iyz="0"
+        izz="1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57075 0 0" />
+      <geometry>
+        <cylinder length="0.06" radius="0.175"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.4 0.3 0.4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.57075 0 0" />
+      <geometry>
+        <cylinder length="0.06" radius="0.175"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.340935167690436 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_chassis" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.152248853886065" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+     <geometry>
+        <box size="0.033 0.175 0.03"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.033 0.175 0.03"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.5 0 0.179722496868772"
+      rpy="0 0.937986 0" />
+     <parent
+      link="base_chassis" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_front">
+    <inertial>
+      <origin
+        xyz="0.477137660665035 -0.200921644523563 -0.0488991518472257"
+        rpy="0 0 0" />
+      <mass
+        value="3.50" />
+      <inertia
+        ixx="0.017"
+        ixy="0"
+        ixz="0"
+        iyy="0.028"
+        iyz="0"
+        izz="0.015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+       <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+      <sphere radius="0.05"/>
+       </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front-joint"
+    type="fixed">
+    <origin
+      xyz="0.45 -0.2 -0.125"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_front" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_front">
+    <inertial>
+      <origin
+        xyz="0.477137660665035 0.206578355476427 -0.0488991518472244"
+        rpy="0 0 0" />
+      <mass
+        value="3.50" />
+      <inertia
+        ixx="0.017"
+        ixy="0"
+        ixz="0"
+        iyy="0.028"
+        iyz="0"
+        izz="0.015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.7 0.7 0.75 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.45 0.2 -0.125"
+      rpy="0 0 0" />
+     <parent
+      link="base_link" />
+    <child
+      link="left_front" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+   <transmission name="left_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_actuator">
+        <mechanicalReduction>1</mechanicalReduction>
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_actuator">
+        <mechanicalReduction>1</mechanicalReduction>
+         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="base_chassis">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="right_wheel">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <gazebo reference="left_wheel">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <gazebo reference="camera_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="right_front">
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+  <gazebo reference="left_front">
+    <material>Gazebo/Grey</material>
+
+  </gazebo>
+
+
+  <!-- Scaled Laser Mechanism (1/10th size of Ryobi) -->
+  <joint name="laser_pan_joint" type="revolute">
+    <origin xyz="0.47 0 0.3" rpy="0 0 0" />
+    <parent link="base_chassis" />
+    <child link="laser_pan_link" />
+    <axis xyz="0 0 1" />
+    <limit effort="1000" lower="-2.0" upper="2.0" velocity="0.5" />
+  </joint>
+
+  <link name="laser_pan_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.01" />
+      <geometry>
+        <cylinder radius="0.02" length="0.02"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1.0 0.423529 0.039215 1.0" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="0.1" />
+      <origin xyz="0 0 0.01"/>
+      <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005" />
+    </inertial>
+  </link>
+
+  <joint name="laser_tilt_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.02" />
+    <parent link="laser_pan_link" />
+    <child link="laser_tilt_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" lower="-1.57" upper="1.57" velocity="0.5" />
+  </joint>
+
+  <link name="laser_tilt_link">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0 0.005" />
+      <geometry>
+        <box size="0.08 0.08 0.01"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.5 0.2 0 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="0.06" />
+      <origin xyz="0 0 0.005"/>
+      <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005" />
+    </inertial>
+  </link>
+
+  <joint name="laser_fixed_joint" type="fixed">
+    <parent link="laser_tilt_link" />
+    <child link="laser_box_link" />
+    <origin rpy="0 0 0" xyz="0 0 0.01" />
+  </joint>
+
+  <link name="laser_box_link">
+    <visual>
+      <origin rpy="0.0 0.0 0.0" xyz="0 0 0.02" />
+      <geometry>
+        <box size="0.08 0.04 0.04"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.5 0.2 0 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="0.04" />
+      <origin xyz="0 0 0.02"/>
+      <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005" />
+    </inertial>
+  </link>
+
+  <joint name="laser_beam_joint" type="fixed">
+    <parent link="laser_box_link" />
+    <child link="laser_beam_link" />
+    <origin rpy="0 0 0" xyz="0.04 0 0.02" />
+  </joint>
+
+  <link name="laser_beam_link">
+    <visual>
+      <origin rpy="0.0 1.57079632679 0.0" xyz="5 0 0"/>
+      <geometry>
+        <cylinder radius="0.004" length="10"/>
+      </geometry>
+      <material name="laser_red">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <inertial>
+      <mass value="0.002" />
+      <origin xyz="5 0 0"/>
+      <inertia ixx="0.005" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005" />
+    </inertial>
+  </link>
+
+  <transmission name="laser_pan_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="laser_pan_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="laser_pan_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="laser_tilt_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="laser_tilt_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="laser_tilt_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo reference="laser_pan_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="laser_tilt_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="laser_box_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="laser_beam_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+</robot>
+

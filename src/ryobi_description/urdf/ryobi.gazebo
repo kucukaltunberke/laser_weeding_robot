@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<robot>
+  <gazebo reference="base_link">
+    <turnGravityOff>false</turnGravityOff>
+    <material>Gazebo/Red</material>
+  </gazebo>
+ 
+ <!-- Base Chassis is with QR code now. Kangal! 
+  <gazebo reference="base_chassis">
+    <turnGravityOff>false</turnGravityOff>
+    <material>Gazebo/DarkYellow</material>
+  </gazebo>
+-->
+
+ <gazebo reference="left_front">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+   	<mu1 value="0.0001"/>
+			<mu2 value="0.0001"/>
+			<kp value="100000.0" />
+			<kd value="1.0" />
+		  <fdir1 value="1 0 0"/>
+  </gazebo>
+
+ <gazebo reference="right_front">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+   	<mu1 value="0.0001"/>
+			<mu2 value="0.0001"/>
+			<kp value="100000.0" />
+			<kd value="1.0" />
+		  <fdir1 value="1 0 0"/>
+  </gazebo>
+
+<gazebo reference="left_wheel_joint">
+    <pid>
+      <p>1.0</p>
+      <i>0.05</i>
+      <d>0.1</d>
+    </pid>
+  </gazebo>
+
+  <gazebo reference="right_wheel_joint">
+    <pid>
+      <p>1.0</p>
+      <i>0.05</i>
+      <d>0.1</d>
+    </pid>
+  </gazebo>
+
+  <gazebo reference="left_wheel">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+   	<mu1 value="10.0"/>
+			<mu2 value="10.0"/>
+			<kp value="100000.0" />
+			<kd value="1.0" />
+		  <fdir1 value="1 0 0"/>
+  </gazebo>
+
+  <gazebo reference="right_wheel">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+     	<mu1 value="10.0"/>
+			<mu2 value="10.0"/>
+			<kp value="100000.0" />
+			<kd value="1.0" />
+		  <fdir1 value="1 0 0"/>
+  </gazebo>
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <updateRate>50.0</updateRate>
+      <leftJoint>left_wheel_joint</leftJoint>
+      <rightJoint>right_wheel_joint</rightJoint>
+      <wheelSeparation>0.68187</wheelSeparation>
+      <wheelDiameter>0.35</wheelDiameter>
+      <wheelAcceleration>1.0</wheelAcceleration>
+      <wheelTorque>20</wheelTorque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <publishWheelTF>false</publishWheelTF>
+      <publishWheelJointState>true</publishWheelJointState>
+      <publishOdomTF>true</publishOdomTF>
+    </plugin>
+  </gazebo>
+  <!-- camera -->
+  <gazebo reference="camera_link">
+    <sensor type="depth" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>1920</width>
+          <height>1080</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <depthImageTopicName>depth/image_raw</depthImageTopicName>
+        <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <frameId>ryobi1/camera_link</frameId>
+        <pointCloudCutoff>0.02</pointCloudCutoff>
+        <pointCloudCutoffMax>10.0</pointCloudCutoffMax>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <gravity>true</gravity>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/ryobi</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+</robot>

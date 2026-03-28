@@ -1,0 +1,9 @@
+ryobi:
+  laser_pan_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: laser_pan_joint
+    pid: {p: 1.0, i: 0.01, d: 0.02}
+  laser_tilt_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: laser_tilt_joint
+    pid: {p: 1.0, i: 0.01, d: 0.02}
