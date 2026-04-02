@@ -350,27 +350,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-   <transmission name="left_wheel_transmission">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="left_wheel_joint">
-        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="left_wheel_actuator">
-        <mechanicalReduction>1</mechanicalReduction>
-         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
 
-  <transmission name="right_wheel_transmission">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="right_wheel_joint">
-        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="right_wheel_actuator">
-        <mechanicalReduction>1</mechanicalReduction>
-         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
   <gazebo reference="base_link">
     <material>Gazebo/White</material>
   </gazebo>

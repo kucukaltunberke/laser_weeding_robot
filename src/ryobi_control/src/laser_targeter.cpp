@@ -98,7 +98,7 @@ void LaserTargeter::startTargeting() {
                  i+1, latest_weeds_.points.size(), x_g, y_g, z_g, pan_angle, tilt_angle);
 
         // Wait 4 seconds for the laser to stay targeted
-        ros::Duration(4.0).sleep();
+        ros::Duration(2.0).sleep();
     }
 
     ROS_INFO("Finished targeting sequence. Returning to IDLE.");
