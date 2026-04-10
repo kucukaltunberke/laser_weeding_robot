@@ -8,10 +8,13 @@ This ROS Noetic workspace contains the simulation environment and core logic for
 ### Demonstrations
 
 **Image Processing Pipeline**  
-<video src="https://github.com/kucukaltunberke/laser_weeding_robot/raw/main/src/image_processing_test.mov" width="600" controls></video>
+
+
 
 **Laser Targeting Kinematics**  
-<video src="https://github.com/kucukaltunberke/laser_weeding_robot/raw/main/src/laser_test.mov" width="600" controls></video>
+
+
+
 
 ### Packages
 The workspace is divided into four main packages:
