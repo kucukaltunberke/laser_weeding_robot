@@ -1,8 +1,5 @@
 # virtual_farm_env
 
-## Project Status: 🚧 Work in Progress 🚧
-**Note: This project is currently not finished.**
-
 
 **Important Notice: Attribution and Origin**
 > [!IMPORTANT]
@@ -12,7 +9,7 @@
 > [FieldRobotEvent/virtual_maize_field](https://github.com/FieldRobotEvent/virtual_maize_field)
 
 ## Overview
-`virtual_farm_env` is an optimized ROS Noetic agricultural environment toolkit adapted from `virtual_maize_field`. It focuses on streamlining the farm simulation by restricting models to photorealistic 3D models of cotton, weeds, and pumpkins, eliminating collision checks for lighter deployment that is specialized for testing image processing algorithms.
+`virtual_farm_env` is an optimized ROS Noetic agricultural environment toolkit adapted from `virtual_maize_field`. It focuses on streamlining the farm simulation by restricting models to photorealistic 3D models of cotton, weeds, and pumpkins, and eliminates collision checks for lighter deployment. The simulation is  that is for testing image processing algorithms.
 
 During world generation, the engine will automatically utilize all available 3D crop models found in the `models/` directory and uniformly distribute the different varieties throughout the field.
 
