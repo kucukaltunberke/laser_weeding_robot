@@ -1,5 +1,5 @@
 build
 devel
 .catkin_workspace
-src/virtual_maize_field/models/
-*.dae
+*.bag
+*.mp4

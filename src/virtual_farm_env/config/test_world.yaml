@@ -1,0 +1,18 @@
+# Clean Soil World Configuration
+
+# Field Dimensions
+row_length: 2.0        # Determines the size of the square field
+
+# Object Generation
+weeds: 320               # Number of weed plants to scatter
+pumpkins: 10             # Number of pumpkin plants to scatter
+cottons: 10              # Number of cotton plants to scatter
+ghost_objects: true     # Set to true if you want non-colliding "ghost" objects
+
+# Markers
+location_markers: false # Place A/B markers at the edges
+
+# Ground Parameters
+ground_resolution: 0.05 # Resolution of the heightmap (lower = more detailed)
+ground_elevation_max: 0.1 # Maximum height variation for the bumpy ground
+ground_ditch_depth: 0.3 # Depth of the surrounding ditch

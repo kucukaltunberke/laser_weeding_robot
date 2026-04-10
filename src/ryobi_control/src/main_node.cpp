@@ -7,10 +7,6 @@ int main(int argc, char** argv) {
 
     LaserTargeter targeter(nh);
 
-    // Using AsyncSpinner because we use ros::Duration::sleep in the targeter,
-    // and if we used a standard single-threaded spin, we might block callbacks.
-    // Though we intentionally ignore weeds while targeting, AsyncSpinner is 
-    // good practice when blocking operations exist in case we need other callbacks.
     ros::AsyncSpinner spinner(2);
     spinner.start();
 
@@ -18,7 +14,6 @@ int main(int argc, char** argv) {
     ROS_INFO("Waiting 5 seconds for initial weed detections...");
     ros::Duration(5.0).sleep();
 
-    // Example sequence: The user wanted it to activate and target step-by-step
     // For now, we just call it once. You can also hook this to a service or subscriber.
     targeter.startTargeting();
 
