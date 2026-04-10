@@ -1,4 +1,4 @@
-# Agricultural Environment Workspace
+# Laser Weeding Robot
 
 ## Project Status: 🚧 Work in Progress 🚧
 **Note: This project is currently not finished and is under active development.**
@@ -20,4 +20,12 @@ The workspace is divided into four main packages, all optimized for the **`ryobi
 - **`image_processing`**: Houses the YOLOv8 vision pipeline interpreting feeds to detect specific objects of interest.
 - **`ryobi_control`**: The C++ logical core directing the **`ryobi`** robot to react to the coordinates parsed by the CV nodes.
 
-Please refer to the `README.md` inside each respective package for more details on their specialized mechanics.
+### How to Run 
+To get the full system running, you will need to launch the packages in a specific sequence.
+
+**Sequence:**
+1. `virtual_farm_env`
+2. `image_processing`
+3. `ryobi_control`
+
+Please refer to the `README.md` inside each respective package for more details.
